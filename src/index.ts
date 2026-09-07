@@ -96,7 +96,7 @@ const handleAuth = (url: URL, env: Env) => {
 	const redirectUrl = `https://${url.hostname}/callback?provider=github`;
 	const authorizeUrl = `${GITHUB_OAUTH_AUTHORIZE_URL}?client_id=${env.GITHUB_APP_CLIENT_ID}&redirect_uri=${encodeURIComponent(
 		redirectUrl
-	)}&state=${state}&allow_signup=false&scope=read:user`;
+	)}&state=${state}&allow_signup=false&scope=read,user`;
 
 	return new Response(null, {
 		headers: {
